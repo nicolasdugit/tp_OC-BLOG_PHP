@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Mon super Blog !</h1>
-	<p>Derniers billets du blog :  à</p>
+	<p>Derniers billets du blog : </p>
 	<?php 
 	try
 	{
