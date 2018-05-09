@@ -48,5 +48,10 @@
 	} // fin de la boucle des commentaires
 	$req->closeCursor();
 	?>
+	<form method="POST" action="commentaires_post.php?billet=<?php echo $_GET['billet'] ?>">
+		<label for="auteur">Auteur : </label><input type="text" name="auteur"><br>
+		<label for="commentaire">Commentaire : </label><textarea name="commentaire"></textarea><br>
+		<input type="submit" value="Valider">
+	</form>
 </body>
 </html>
