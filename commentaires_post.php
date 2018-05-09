@@ -7,8 +7,11 @@ catch (Exception $e)
 {
 	die('Erreur : ' .$e->getMessage());
 }
+if ($_POST['auteur'] AND $_POST['commentaire'] ) 
+{
 $req = $bdd->prepare('INSERT INTO commentaires (id_billet, auteur, commentaire, date_commentaire) VALUES (?,?,?, NOW() )');
 $req->execute(array($_GET['billet'], htmlspecialchars($_POST['auteur']), htmlspecialchars($_POST['commentaire'])));
+}
 //redirection vers commentaires.php
 $redirect = $_GET['billet'];
 header("location: commentaires.php?billet=$redirect");
