@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Mon super Blog !</h1>
-	<a href="index.php">Reour à la liste des billets</a>
+	<a href="index.php">Retour à la liste des billets</a>
 	<div class="news">
 		<h3></h3>
 		<p></p>
