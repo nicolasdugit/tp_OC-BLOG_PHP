@@ -7,5 +7,13 @@
 </head>
 <body>
 	<h1>Mon super Blog !</h1>
+	<p>Derniers billets du blog : </p>
+	<div class="news">
+		<h3></h3>
+		<p>
+			
+		</p>
+		<a href="commentaires.php">Commentaire</a>
+	</div>
 </body>
 </html>
