@@ -17,21 +17,25 @@
 	{
 		die('Erreur : ' .$e->getMessage());
 	}
-	//recuperation des 5 derniers messages
-	$reponse = $bdd->query('SELECT * FROM billets');
+	//recuperation des derniers messages
+	$req = $bdd->query('SELECT id,titre,contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT 0,5');
 	//affichage de chaques message
-	while ($donnees = $reponse->fetch())
+	while ($donnees = $req->fetch())
 	{
 		?>
 		<div class="news">
-			<h3><?php echo htmlspecialchars($donnees['titre']);?> le <?php echo htmlspecialchars($donnees['date_creation']); ?>  </h3>
+			<h3><?php echo htmlspecialchars($donnees['titre']);?> 
+				<em>le <?php echo htmlspecialchars($donnees['date_creation_fr']); ?></em>
+			</h3>
 			<p>
 				<?php echo nl2br(htmlspecialchars($donnees['contenu'])); ?>
+				<br>
+				<em><a href="commentaires.php?billet=<?php echo $donnees['id']; ?>">Commentaires</a></em>
 			</p>
-			<a href="commentaires.php">Commentaire</a>
 		</div>
 		<?php
-	}
+	} // fin bloucle billets
+	$req->closeCursor();
 	?>
 </body>
 </html>

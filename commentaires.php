@@ -8,6 +8,16 @@
 <body>
 	<h1>Mon super Blog !</h1>
 	<a href="index.php">Retour à la liste des billets</a>
+	<?php
+	try
+	{
+		$bdd = new PDO('mysql:host=localhost;dbname=testOC;charset=utf8', 'root', '');
+	}
+	catch (Exception $e)
+	{
+		die('Erreur : ' .$e->getMessage());
+	}
+	?>
 	<div class="news">
 		<h3></h3>
 		<p></p>
