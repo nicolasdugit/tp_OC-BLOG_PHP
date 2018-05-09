@@ -24,7 +24,7 @@
 	<div class="news">
 		<h3>
 			<?php echo htmlspecialchars($donnees['titre']);?> 
-			<em>le <?php echo htmlspecialchars($donnees['date_creation_fr']); ?></em>
+			<em>le <?php echo $donnees['date_creation_fr']; ?></em>
 		</h3>
 		<p>
 			<?php echo nl2br(htmlspecialchars($donnees['contenu'])); ?>
@@ -41,11 +41,11 @@
 	{
 		?>
 		<div>
-			<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo htmlspecialchars($donnees['date_commentaire_fr']); ?> </p>
-			<p><?php echo htmlspecialchars($donnees['commentaire']); ?></p>
+			<p><strong><?php echo htmlspecialchars($donnees['auteur']); ?></strong> le <?php echo $donnees['date_commentaire_fr']; ?> </p>
+			<p><?php echo nl2br(htmlspecialchars($donnees['commentaire'])); ?></p>
 		</div>
 		<?php
-	}
+	} // fin de la boucle des commentaires
 	$req->closeCursor();
 	?>
 </body>
