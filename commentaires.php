@@ -20,6 +20,14 @@
 	$req = $bdd->prepare('SELECT id,titre,contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id=?');
 	$req->execute(array($_GET['billet']));
 	$donnees = $req->fetch();
+	if (empty($donnees)) 
+	{
+		?>
+			<p> Cette page n'existe pas </p>
+		<?php
+	}
+	else 
+	{
 	?>
 	<div class="news">
 		<h3>
@@ -53,5 +61,8 @@
 		<label for="commentaire">Commentaire : </label><textarea name="commentaire"></textarea><br>
 		<input type="submit" value="Valider">
 	</form>
+	<?php 
+	} // fin du else
+	?>
 </body>
 </html>
