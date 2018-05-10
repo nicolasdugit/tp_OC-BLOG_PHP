@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Mon super Blog !</h1>
-	<a href="admin/ajouter.php">admin</a>
+	<a href="admin/administrateur.php">admin</a>
 	<p>Derniers billets du blog : </p>
 	<?php 
 	try
