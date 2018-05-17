@@ -1,4 +1,0 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/home/nicolas/Pro/Cours/Openclassrooms/Formation-dev-web/Projet-4/Cours/Concevez_votre_site_web_avec_PHP_et_MySQL/OC_DWJ_PHP_TP-BLOG/admin/.htpasswd"
-Require valid-user
